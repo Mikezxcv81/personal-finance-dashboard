@@ -3,10 +3,10 @@ from setuptools import setup, find_packages
 setup(
     name="personal-finance-dashboard",
     version="1.0.0",
-    description="A personal finance dashboard with expense tracking, visualization, and real-time data integration.",
-    author="Michael Porter",
-    packages=find_packages(where="src"),
-    package_dir={"": "src"},
+    description="A personal finance dashboard with expense tracking and visualization.",
+    author="Your Name",
+    packages=find_packages(where="src"),  # Specify 'src' as the base directory
+    package_dir={"": "src"},              # Map the root to 'src'
     install_requires=[
         "matplotlib",
         "requests"
@@ -17,3 +17,4 @@ setup(
         ]
     }
 )
+

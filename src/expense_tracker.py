@@ -3,6 +3,7 @@ import requests
 from typing import List, Dict
 import matplotlib.pyplot as plt
 
+
 class ExpenseTracker:
     def __init__(self):
         self.transactions = []
@@ -109,3 +110,43 @@ class ExpenseTracker:
             return price
         except KeyError:
             raise ValueError(f"Error fetching cryptocurrency price for {coin_id}: {data}")
+
+
+def main():
+    """Main function to run the Expense Tracker."""
+    tracker = ExpenseTracker()
+
+    # Load sample data
+    print("Loading transactions...")
+    try:
+        tracker.load_transactions("data/sample_transactions.csv")
+    except FileNotFoundError:
+        print("Sample transactions file not found. Please ensure 'data/sample_transactions.csv' exists.")
+        return
+
+    print("Transactions loaded.")
+
+    # Add a new transaction
+    tracker.add_transaction("2024-01-15", "Groceries", 75.0, "Additional shopping")
+    print("New transaction added.")
+
+    # Save to a new file
+    tracker.save_transactions("data/updated_transactions.csv")
+    print("Transactions saved to 'data/updated_transactions.csv'.")
+
+    # Display summary
+    summary = tracker.get_summary()
+    print("\nExpense Summary:")
+    for category, amount in summary.items():
+        print(f"{category}: ${amount:.2f}")
+
+    # Plot expenses
+    print("\nDisplaying bar chart for expenses...")
+    tracker.plot_expenses()
+
+    print("\nDisplaying pie chart for expenses...")
+    tracker.plot_expenses_pie()
+
+
+if __name__ == "__main__":
+    main()
