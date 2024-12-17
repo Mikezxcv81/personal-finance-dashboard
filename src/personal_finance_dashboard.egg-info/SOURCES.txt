@@ -1,0 +1,9 @@
+LICENSE
+README.md
+setup.py
+src/personal_finance_dashboard.egg-info/PKG-INFO
+src/personal_finance_dashboard.egg-info/SOURCES.txt
+src/personal_finance_dashboard.egg-info/dependency_links.txt
+src/personal_finance_dashboard.egg-info/entry_points.txt
+src/personal_finance_dashboard.egg-info/requires.txt
+src/personal_finance_dashboard.egg-info/top_level.txt

@@ -1,0 +1,3 @@
+[console_scripts]
+finance-dashboard = expense_tracker:main
+
